@@ -5,21 +5,16 @@ import Main from '../components/Main'
 import './App.css'
 
 function App() {
-	const [theme, setTheme] = useState({ darkMode: "dark" });
+	const [darkMode, setDarkMode] = useState(true);
 
 	function toggleDarkMode() {
-		setTheme(prev => {
-			return {
-				...prev,
-				darkMode: !prev.darkMode
-			}
-		});
+		setDarkMode(prev => !prev)
 	}
 
 	return (
 		<div className="container">
-			<Navbar darkMode={theme.darkMode} toggleDarkMode={toggleDarkMode} />
-			<Main darkMode={theme.darkMode} />
+			<Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+			<Main darkMode={darkMode} />
 		</div>
 	)
 }

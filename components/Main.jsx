@@ -1,7 +1,7 @@
 import React from "react"
 
 export default function Main(props) {
-    //console.log(props.darkMode);
+    console.log(props);
     return (
         <main className={props.darkMode ? "dark" : ""}>
             
